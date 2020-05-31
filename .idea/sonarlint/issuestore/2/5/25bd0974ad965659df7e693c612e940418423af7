@@ -1,0 +1,23 @@
+
+U	java:S106+"9Replace this use of System.out or System.err by a logger.(Ù‘ÓÛ8û«İ½¦.
+Z	java:S106="9Replace this use of System.out or System.err by a logger.(ÇÆçøøÿÿÿÿ8ÄàÄ½¦.
+T	java:S106b"9Replace this use of System.out or System.err by a logger.(ñäÊq8èäª¿¦.
+T	java:S106L"9Replace this use of System.out or System.err by a logger.(ü˜ğ/8›Î‘¿¦.
+U	java:S106N"9Replace this use of System.out or System.err by a logger.(½úŸ8±´£¿¦.
+U	java:S106'"9Replace this use of System.out or System.err by a logger.(Â«ã«8¿ĞÃ½¦.
+Z	java:S106A"9Replace this use of System.out or System.err by a logger.(œïİıÿÿÿÿ8†Úß½¦.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(®«â¼8ŞƒÃ½¦.
+Z	java:S1061"9Replace this use of System.out or System.err by a logger.(ñ¬Àüÿÿÿÿ8ñıÃ½¦.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(øÏÀ·8ÇÑå¼¦.
+L
+java:S3740h"/Provide the parametrized type for this generic.(¿Áüş8Şé°½¦.
+Z	java:S106R"9Replace this use of System.out or System.err by a logger.(ŞŸ¾¯ûÿÿÿÿ8ûş©¿¦.
+Z	java:S106Y"9Replace this use of System.out or System.err by a logger.(·ÒÏÿùÿÿÿÿ8ƒ¿Ï¾¦.
+U	java:S106^"9Replace this use of System.out or System.err by a logger.(½úŸ8èäª¿¦.
+U	java:S106#"9Replace this use of System.out or System.err by a logger.(Ôèî£8•î‰¾¦.
+U	java:S106`"9Replace this use of System.out or System.err by a logger.(ïúßø8èäª¿¦.
+T	java:S106P"9Replace this use of System.out or System.err by a logger.(šğ†j8£§©¿¦.
+Z	java:S106\"9Replace this use of System.out or System.err by a logger.(éÓ÷¥ÿÿÿÿÿ8èäª¿¦.
+n	java:S116"MRename this field "ID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘¥âğúÿÿÿÿ8ŸÓ”¾¦.
+Z	java:S1065"9Replace this use of System.out or System.err by a logger.(›ÍÕóúÿÿÿÿ8×§·¾¦.
+Z	java:S106I"9Replace this use of System.out or System.err by a logger.(« œÊşÿÿÿÿ8½ñÌ¾¦.

@@ -1,0 +1,8 @@
+
+Q
+java:S1128"/Remove this unused import 'java.sql.SQLOutput'.(ê¤òÃùÿÿÿÿ8½Ç¾¦.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(Ğù§Š8Ó«ä¼¦.
+{
+java:S2293'"YReplace the type specification in this constructor call with the diamond operator ("<>").(ĞÿÅèùÿÿÿÿ8»ï½¦.
+U	java:S106/"9Replace this use of System.out or System.err by a logger.(¿ïÂ¨8½Ç¾¦.
+U	java:S106+"9Replace this use of System.out or System.err by a logger.(åáÃÅ8œÊ¾¦.
