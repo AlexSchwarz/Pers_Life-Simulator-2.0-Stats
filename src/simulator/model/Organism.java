@@ -4,6 +4,15 @@ import java.util.Objects;
 
 public class Organism {
 
+    /*
+    todo: add energy attribute. Only increase on feed. Death at 0. (Nothing to do with mating).
+    todo: add gender boolean attribute (or some other way of telling gender).
+
+    todo: add different chances passed through constructor. i.e feed chance -> probability = actor find pray chance - pray escape chance
+
+    todo: add boolean for hasMated, hasFed, hasMoved to stop iteration in area
+     */
+
     private static int counter = 0;
 
     private final int ID;

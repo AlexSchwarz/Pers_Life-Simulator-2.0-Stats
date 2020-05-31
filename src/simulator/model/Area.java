@@ -85,7 +85,13 @@ public class Area {
         }
     }
 
+    private void animalMove(Animal animal) {
+        //todo: run chance for move. If pass, add to seperate move list with getter and removed from org list. Called upon once all areas
+        //are done progressing. Make sure to clear move list a start of area progression.
+    }
+
     private void animalMate(Animal animal, List<Organism> organismsToMateWith) {
+        //todo: add way to add new org of actor type to orgList
         System.out.println("Attempting mate with " + organismsToMateWith);
         for(Organism organism : organismsToMateWith) {
             if(!animal.equals(organism)) {
