@@ -3,6 +3,7 @@ package simulator.model;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Domain {
 
@@ -22,7 +23,7 @@ public class Domain {
      */
 
     private final List<Area> areaList;
-
+    private Random random = new Random();
 
 
     public Domain() {
@@ -44,21 +45,53 @@ public class Domain {
     private List<Organism> newOrgList() {
         List<Organism> list = new ArrayList<>();
         list.add(new Plant());
+        list.add(new Plant());
+        list.add(new Plant());
+        list.add(new Plant());
         list.add(new Rabbit());
         list.add(new Rabbit());
+        list.add(new Rabbit());
+        list.add(new Rabbit());
+        list.add(new Wolf());
+        list.add(new Wolf());
+        list.add(new Wolf());
         list.add(new Wolf());
         return list;
     }
 
     private List<Organism> newEmptyList() {
-        return new ArrayList<Organism>();
+        return new ArrayList<>();
     }
 
     public void progressDomain() {
         System.out.println("DOMAIN: Progress...");
-        for(Area area : areaList) {
-            area.progressArea();
+        int i = 0;
+        while(i < 50) {
+            List<Animal> moveList = new ArrayList<>();
+            for (Area area : areaList) {
+                moveList.addAll(area.progressArea());
+            }
+            moveAnimals(moveList);
+            i++;
         }
         System.out.println("DOMAIN: -> Progression complete");
+    }
+
+    private void moveAnimals(List<Animal> moveList) {
+        System.out.println("DOMAIN: Moving animals...");
+        for(Animal animal : moveList) {
+            System.out.println("Moving " + animal.toString());
+            boolean searching = true;
+            while(searching) {
+                try {
+                    int areaIndex = random.nextInt(Config.NUMBER_OF_AREAS);
+                    areaList.get(areaIndex).addOrganism(animal);
+                    System.out.println("Moved to area " + areaIndex);
+                    searching = false;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 }
