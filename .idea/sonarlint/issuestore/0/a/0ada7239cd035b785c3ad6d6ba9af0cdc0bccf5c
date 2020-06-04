@@ -1,17 +1,25 @@
 
-U	java:S106C"9Replace this use of System.out or System.err by a logger.(åáÃÅ8œÊ¾¦.
-U	java:S106"9Replace this use of System.out or System.err by a logger.(Ğù§Š8Ó«ä¼¦.
-Z	java:S106S"9Replace this use of System.out or System.err by a logger.(‰’“Îüÿÿÿÿ8˜éÑü¦.
-T
-java:S1135"2Complete the task associated to this TODO comment.(²Õ‚Öşÿÿÿÿ8Óñ¡Ó¦.
-O
-java:S1135"2Complete the task associated to this TODO comment.(ú´Ì8†©’Ó¦.
 E
-java:S1148\"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ó¾Íü¦.
-U	java:S106M"9Replace this use of System.out or System.err by a logger.(¿ïÂ¨8½Ç¾¦.
+java:S1148c"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ó¾Íü¦.
+Q
+java:S11444"/Remove this unused private "newOrgList" method.(îìÈ¤úÿÿÿÿ8’İÇÿ§.
+U	java:S106T"9Replace this use of System.out or System.err by a logger.(¿ïÂ¨8½Ç¾¦.
+N
+java:S1144E"1Remove this unused private "newEmptyList" method.(åË–Ä8’İÇÿ§.
+C
+java:S1172"&Remove these unused method parameters.(ş»8¸´Ñş§.
 T
 java:S1135"2Complete the task associated to this TODO comment.(¥˜öÜùÿÿÿÿ8ÁœÓ¦.
-U	java:S106Q"9Replace this use of System.out or System.err by a logger.(ÕÖÈû8˜éÑü¦.
-Z	java:S106Y"9Replace this use of System.out or System.err by a logger.(ÒØˆˆÿÿÿÿÿ8ÛÇÓü¦.
 Q
 java:S1128"/Remove this unused import 'java.sql.SQLOutput'.(ê¤òÃùÿÿÿÿ8½Ç¾¦.
+C
+java:S1172#"&Remove these unused method parameters.(×²ò½8’İÇÿ§.
+U	java:S106X"9Replace this use of System.out or System.err by a logger.(ÕÖÈû8˜éÑü¦.
+Z	java:S106`"9Replace this use of System.out or System.err by a logger.(ÒØˆˆÿÿÿÿÿ8ÛÇÓü¦.
+O
+java:S1135"2Complete the task associated to this TODO comment.(ú´Ì8†©’Ó¦.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(Ğù§Š8Ó«ä¼¦.
+U	java:S106J"9Replace this use of System.out or System.err by a logger.(åáÃÅ8œÊ¾¦.
+T
+java:S1135"2Complete the task associated to this TODO comment.(²Õ‚Öşÿÿÿÿ8Óñ¡Ó¦.
+Z	java:S106Z"9Replace this use of System.out or System.err by a logger.(‰’“Îüÿÿÿÿ8˜éÑü¦.

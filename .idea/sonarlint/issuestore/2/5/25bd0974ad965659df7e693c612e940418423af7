@@ -1,51 +1,55 @@
 
-L
-java:S3740E"/Provide the parametrized type for this generic.(‘Áõ8â€«ş§.
 M
-java:S3740À"/Provide the parametrized type for this generic.(¿Áüş8â€«ş§.
-h
-java:S1192<"KDefine a constant instead of duplicating this literal "**********" 4 times.(“¾Øü8â€«ş§.
-j
-java:S1192?"HDefine a constant instead of duplicating this literal "DEATH: " 3 times.(À¡—ıùÿÿÿÿ8â€«ş§.
-b	java:S112%"FDefine and throw a dedicated exception instead of using a generic one.(î³Û8â€«ş§.
-b	java:S112#"FDefine and throw a dedicated exception instead of using a generic one.(ó†óÖ8â€«ş§.
-U	java:S106"9Replace this use of System.out or System.err by a logger.(øÏÀ·8â€«ş§.
-U	java:S106-"9Replace this use of System.out or System.err by a logger.(®«â¼8â€«ş§.
-Z	java:S1063"9Replace this use of System.out or System.err by a logger.(éØ€›ùÿÿÿÿ8â€«ş§.
-U	java:S106<"9Replace this use of System.out or System.err by a logger.(“¾Øü8â€«ş§.
-Z	java:S106?"9Replace this use of System.out or System.err by a logger.(À¡—ıùÿÿÿÿ8â€«ş§.
-U	java:S106I"9Replace this use of System.out or System.err by a logger.(ŒºÕï8â€«ş§.
-U	java:S106O"9Replace this use of System.out or System.err by a logger.(ë’ÁÑ8â€«ş§.
-Z	java:S106Z"9Replace this use of System.out or System.err by a logger.(›ÍÕóúÿÿÿÿ8â€«ş§.
-U	java:S106`"9Replace this use of System.out or System.err by a logger.(‡åô8â€«ş§.
-Z	java:S106k"9Replace this use of System.out or System.err by a logger.(¢şÏúÿÿÿÿ8â€«ş§.
-U	java:S106q"9Replace this use of System.out or System.err by a logger.(Õªóã8â€«ş§.
-[	java:S106‚"9Replace this use of System.out or System.err by a logger.(ˆ·ÇÓùÿÿÿÿ8â€«ş§.
-[	java:S106œ"9Replace this use of System.out or System.err by a logger.(ä¨§áúÿÿÿÿ8â€«ş§.
-U
-java:S1135¦"2Complete the task associated to this TODO comment.(¯¶¹ïşÿÿÿÿ8â€«ş§.
-[	java:S106±"9Replace this use of System.out or System.err by a logger.(Ëş€ ùÿÿÿÿ8â€«ş§.
-]	java:S1258"<This block of commented-out lines of code should be removed.(˜ğÎÓøÿÿÿÿ8â€«ş§.
-]	java:S125V"<This block of commented-out lines of code should be removed.(ö„¬¶ùÿÿÿÿ8â€«ş§.
-]	java:S125g"<This block of commented-out lines of code should be removed.(¶…îîûÿÿÿÿ8â€«ş§.
-]	java:S125x"<This block of commented-out lines of code should be removed.(€Á¦èûÿÿÿÿ8â€«ş§.
-]	java:S125|"<This block of commented-out lines of code should be removed.(ì”áüÿÿÿÿ8â€«ş§.
-W	java:S125~"<This block of commented-out lines of code should be removed.(Ã÷±]8â€«ş§.
-^	java:S125€"<This block of commented-out lines of code should be removed.(•©âúøÿÿÿÿ8â€«ş§.
-^	java:S125‡"<This block of commented-out lines of code should be removed.(Èû‚›ıÿÿÿÿ8â€«ş§.
-^	java:S125"<This block of commented-out lines of code should be removed.(Š¼ïùÿÿÿÿ8â€«ş§.
-^	java:S125"<This block of commented-out lines of code should be removed.(ê“áŸúÿÿÿÿ8â€«ş§.
-Y	java:S125”"<This block of commented-out lines of code should be removed.(±Ñ›Ê8â€«ş§.
-^	java:S125–"<This block of commented-out lines of code should be removed.(•©âúøÿÿÿÿ8â€«ş§.
-^	java:S125˜"<This block of commented-out lines of code should be removed.(ÂÓŒ¾ÿÿÿÿÿ8â€«ş§.
-^	java:S125š"<This block of commented-out lines of code should be removed.(³ıàŠûÿÿÿÿ8â€«ş§.
-^	java:S125Ÿ"<This block of commented-out lines of code should be removed.(¦¢Ûøûÿÿÿÿ8â€«ş§.
-Y	java:S125©"<This block of commented-out lines of code should be removed.(ë¦æË8â€«ş§.
-^	java:S125¬"<This block of commented-out lines of code should be removed.(Ã–…Ùıÿÿÿÿ8â€«ş§.
-^	java:S125¯"<This block of commented-out lines of code should be removed.(•©âúøÿÿÿÿ8â€«ş§.
+java:S3740Ä"/Provide the parametrized type for this generic.(¿Áüş8â€«ş§.
+Y	java:S125–"<This block of commented-out lines of code should be removed.(±Ñ›Ê8â€«ş§.
 ^	java:S125µ"<This block of commented-out lines of code should be removed.(‚şıÿÿÿÿ8â€«ş§.
+[	java:S106±"9Replace this use of System.out or System.err by a logger.(Ëş€ ùÿÿÿÿ8â€«ş§.
+Z	java:S1065"9Replace this use of System.out or System.err by a logger.(éØ€›ùÿÿÿÿ8â€«ş§.
 ^	java:S125¸"<This block of commented-out lines of code should be removed.(ÂÏşœøÿÿÿÿ8â€«ş§.
-V
-java:S1144U"4Remove this unused private "progressRabbits" method.(¹¸İ±ûÿÿÿÿ8â€«ş§.
+U	java:S106K"9Replace this use of System.out or System.err by a logger.(ŒºÕï8â€«ş§.
+]	java:S125i"<This block of commented-out lines of code should be removed.(¶…îîûÿÿÿÿ8â€«ş§.
+^	java:S125¬"<This block of commented-out lines of code should be removed.(Ã–…Ùıÿÿÿÿ8â€«ş§.
+^	java:S125"<This block of commented-out lines of code should be removed.(Š¼ïùÿÿÿÿ8â€«ş§.
+h
+java:S1192>"KDefine a constant instead of duplicating this literal "**********" 4 times.(“¾Øü8â€«ş§.
+]	java:S125:"<This block of commented-out lines of code should be removed.(˜ğÎÓøÿÿÿÿ8â€«ş§.
+y
+java:S1905Á"VRemove this unnecessary cast to "org.sonar.java.resolve.Symbols$UnknownType@196de13d".(°ğ„×şÿÿÿÿ8şğ¯ÿ§.
+^	java:S125š"<This block of commented-out lines of code should be removed.(ÂÓŒ¾ÿÿÿÿÿ8â€«ş§.
+X	java:S125€"<This block of commented-out lines of code should be removed.(Ã÷±]8â€«ş§.
+j
+java:S1192A"HDefine a constant instead of duplicating this literal "DEATH: " 3 times.(À¡—ıùÿÿÿÿ8â€«ş§.
+^	java:S125’"<This block of commented-out lines of code should be removed.(ê“áŸúÿÿÿÿ8â€«ş§.
+Y	java:S125©"<This block of commented-out lines of code should be removed.(ë¦æË8â€«ş§.
+L
+java:S3740G"/Provide the parametrized type for this generic.(‘Áõ8â€«ş§.
+t
+java:S1450"XRemove the "isRunning" field and declare it as a local variable in the relevant methods.(®Ò€o8œ¥äş§.
+]	java:S125z"<This block of commented-out lines of code should be removed.(€Á¦èûÿÿÿÿ8â€«ş§.
+b	java:S112$"FDefine and throw a dedicated exception instead of using a generic one.(ó†óÖ8â€«ş§.
+U	java:S106."9Replace this use of System.out or System.err by a logger.(®«â¼8â€«ş§.
+U	java:S106s"9Replace this use of System.out or System.err by a logger.(Õªóã8â€«ş§.
 O
-java:S1144f"2Remove this unused private "progressWolfs" method.(Ñç§¡8â€«ş§.
+java:S1144h"2Remove this unused private "progressWolfs" method.(Ñç§¡8â€«ş§.
+Z	java:S106\"9Replace this use of System.out or System.err by a logger.(›ÍÕóúÿÿÿÿ8â€«ş§.
+Z	java:S106m"9Replace this use of System.out or System.err by a logger.(¢şÏúÿÿÿÿ8â€«ş§.
+b	java:S112&"FDefine and throw a dedicated exception instead of using a generic one.(î³Û8â€«ş§.
+U	java:S106Q"9Replace this use of System.out or System.err by a logger.(ë’ÁÑ8â€«ş§.
+^	java:S125‰"<This block of commented-out lines of code should be removed.(Èû‚›ıÿÿÿÿ8â€«ş§.
+^	java:S125¯"<This block of commented-out lines of code should be removed.(•©âúøÿÿÿÿ8â€«ş§.
+U	java:S106>"9Replace this use of System.out or System.err by a logger.(“¾Øü8â€«ş§.
+^	java:S125‚"<This block of commented-out lines of code should be removed.(•©âúøÿÿÿÿ8â€«ş§.
+[	java:S106"9Replace this use of System.out or System.err by a logger.(ä¨§áúÿÿÿÿ8â€«ş§.
+^	java:S125˜"<This block of commented-out lines of code should be removed.(•©âúøÿÿÿÿ8â€«ş§.
+I
+java:S1068"-Remove this unused "isRunning" private field.(®Ò€o8ç¾Úş§.
+V
+java:S1144W"4Remove this unused private "progressRabbits" method.(¹¸İ±ûÿÿÿÿ8â€«ş§.
+]	java:S125X"<This block of commented-out lines of code should be removed.(ö„¬¶ùÿÿÿÿ8â€«ş§.
+U	java:S106b"9Replace this use of System.out or System.err by a logger.(‡åô8â€«ş§.
+]	java:S125~"<This block of commented-out lines of code should be removed.(ì”áüÿÿÿÿ8â€«ş§.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(øÏÀ·8â€«ş§.
+^	java:S125œ"<This block of commented-out lines of code should be removed.(³ıàŠûÿÿÿÿ8â€«ş§.
+Z	java:S106A"9Replace this use of System.out or System.err by a logger.(À¡—ıùÿÿÿÿ8â€«ş§.
+[	java:S106„"9Replace this use of System.out or System.err by a logger.(ˆ·ÇÓùÿÿÿÿ8â€«ş§.
+^	java:S125¡"<This block of commented-out lines of code should be removed.(¦¢Ûøûÿÿÿÿ8â€«ş§.
