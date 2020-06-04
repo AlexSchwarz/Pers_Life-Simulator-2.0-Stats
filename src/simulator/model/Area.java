@@ -9,7 +9,7 @@ public class Area {
     private static int counter = 0;
 
     private List<Organism> organismList;
-    private final int ID;
+    private final int id;
     private Random random;
 
     public Area(List<Organism> organismList) {
@@ -17,7 +17,7 @@ public class Area {
         random = new Random();
         Objects.requireNonNull(organismList);
         this.organismList = organismList;
-        ID = counter++;
+        id = counter++;
     }
 
     private List<Organism> getAllOrganisms() {
@@ -44,9 +44,9 @@ public class Area {
     public List<Animal> progressArea() {
         System.out.println("AREA: " + toString() + " Progress organisms... " + organismList);
         progressPlants();
-        progressRabbits();
-        progressWolfs();
-        resetAllAnimals();
+        progressAnimals(Rabbit.class);
+        progressAnimals(Wolf.class);
+        countTimerAllAnimals();
         List <Animal> moveList = moveAnimals();
         System.out.println("AREA: -> Progression organisms complete. Staying " + organismList + " Moving " + moveList);
         return moveList;
@@ -62,6 +62,22 @@ public class Area {
             if(plant.isDead()) {
                 System.out.println("DEATH: " + plant);
                 organismList.remove(plant);
+            }
+        }
+    }
+
+    private void progressAnimals(Class animalClass) {
+        Iterator<Organism> it = getOrganismsByInstance(animalClass).iterator();
+        while(it.hasNext()) {
+            Animal animal = (Animal) it.next();
+            System.out.println("AREA: Progress " + animal.toString()  + "**********");
+            animalFeed(animal, getOrganismsByInstance(animal.getPray()));
+            animalMate(animal, getOrganismsByInstance(animal.getClass()));
+            animal.increaseAge();
+            animal.decreaseEnergy(Config.DAILY_ENERGY_COST);
+            if(animal.isDead()) {
+                System.out.println("Death: " + animal);
+                organismList.remove(animal);
             }
         }
     }
@@ -103,7 +119,7 @@ public class Area {
     private void animalFeed(Animal animal, List<Organism> organismsToFeedOn) {
         //System.out.println("Attempting feed on " + organismsToFeedOn);
         Iterator<Organism> it = organismsToFeedOn.iterator();
-        while(animal.getWantsToFeed() && it.hasNext()) {
+        while(animal.canFeed() && it.hasNext()) {
             Organism organism = it.next();
             //System.out.println("Checking " + organism.toString());
             if(!animal.equals(organism)) {
@@ -113,7 +129,7 @@ public class Area {
                 if (animal.getChanceToFeed() >= chance) {
                     System.out.println("FEED:" + organism);
                     animal.increaseEnergy(organism.getEnergy());
-                    animal.setHasFed();
+                    animal.resetFeedTimer();
                     organismList.remove(organism);
                 } else {
                     //System.out.println("FAILURE feed " + organism);
@@ -126,15 +142,15 @@ public class Area {
         //System.out.println("Attempting mate with " + organismsToMateWith);
         Iterator<Organism> it = organismsToMateWith.iterator();
         //System.out.println("Animal Actor wants to mate " + animalActor.getWantsToMate());
-        while(animalActor.getWantsToMate() && it.hasNext()) {
+        while(animalActor.canMate() && it.hasNext()) {
             Animal animalTarget = (Animal) it.next();
-            if(!animalActor.equals(animalTarget) && animalTarget.getWantsToMate()) {
+            if(!animalActor.equals(animalTarget) && animalTarget.canMate()) {
                 //System.out.println("Animal mate chance " + animalActor.getChanceToMate());
                 double chance = random.nextDouble();
                 //System.out.println("Chance " + chance);
                 if (animalActor.getChanceToMate() >= chance && !isFull()) {
                     //System.out.println("SUCCESS Mate " + animalTarget);
-                    animalActor.setHasMated();
+                    animalActor.resetMateTimer();
                     //System.out.println("Adding " + newAnimal);
                     Animal newAnimal = animalActor.getNewInstance();
                     System.out.println("MATE: " + animalActor + " with " + animalTarget + " result " + newAnimal);
@@ -169,8 +185,8 @@ public class Area {
         return moveList;
     }
 
-    private void resetAllAnimals() {
-        getOrganismsByInstance(Animal.class).forEach(animal -> ((Animal) animal).resetStatus());
+    private void countTimerAllAnimals() {
+        getOrganismsByInstance(Animal.class).forEach(animal -> ((Animal) animal).countDownTimer());
     }
 
     private List<Organism> getOrganismsByInstance(Class organismClass) {
@@ -184,7 +200,7 @@ public class Area {
     @Override
     public String toString() {
         return "Area{" +
-                ID +
+                id +
                 '}';
     }
 }

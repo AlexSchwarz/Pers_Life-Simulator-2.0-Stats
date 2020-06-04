@@ -5,20 +5,22 @@ public abstract class Animal extends Organism{
     private final double chanceToFeed;
     private final double chanceToMate;
     private final double chanceToMove;
-    private boolean hasNotMated;
-    private boolean hasNotFed;
-    private final int ageToMate;
-    private final int energyToMate;
+    private final Class pray;
+    private final int mateTimeDelay;
+    private final int feedTimeDelay;
+    private int mateTimer;
+    private int feedTimer;
 
-    public Animal(int startEnergy, int maxEnergy, int maxAge, int ageToMate, int energyToMate,  double chanceToFeed, double chanceToMate, double chanceToMove) {
+    public Animal(int startEnergy, int maxEnergy, int maxAge, int mateTimeDelay, int feedTimeDelay,  double chanceToFeed, double chanceToMate, double chanceToMove, Class pray) {
         super(startEnergy, maxEnergy, maxAge);
         this.chanceToFeed = chanceToFeed;
         this.chanceToMate = chanceToMate;
         this.chanceToMove = chanceToMove;
-        hasNotMated = true;
-        hasNotFed = true;
-        this.ageToMate = ageToMate;
-        this.energyToMate = energyToMate;
+        this.pray = pray;
+        this.mateTimeDelay = mateTimeDelay;
+        this.feedTimeDelay = feedTimeDelay;
+        resetMateTimer();
+        resetFeedTimer();
     }
 
     public double getChanceToFeed() {
@@ -33,25 +35,37 @@ public abstract class Animal extends Organism{
         return  chanceToMove;
     }
 
-    public boolean getWantsToMate() {
-        return hasNotMated && getAge() >= ageToMate && getEnergy() >= energyToMate;
+    public Class getPray () {
+        return pray;
     }
 
-    public void setHasFed() {
-        hasNotFed = false;
+    public void resetMateTimer() {
+        mateTimer = mateTimeDelay;
     }
 
-    public void setHasMated() {
-        hasNotMated = false;
+    public void resetFeedTimer() {
+        feedTimer = feedTimeDelay;
     }
 
-    public boolean getWantsToFeed() {
-        return hasNotFed;
+    public boolean canMate() {
+        boolean canMate = false;
+        if(mateTimer == 0){
+            canMate = true;
+        }
+        return canMate;
     }
 
-    public void resetStatus() {
-        hasNotFed = true;
-        hasNotMated = true;
+    public boolean canFeed() {
+        boolean canFeed = false;
+        if(feedTimer == 0){
+            canFeed = true;
+        }
+        return canFeed;
+    }
+
+    public void countDownTimer() {
+        feedTimer = Math.max(feedTimer-1, 0);
+        mateTimer = Math.max(mateTimer-1, 0);
     }
 
     public abstract Animal getNewInstance();
