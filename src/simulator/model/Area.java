@@ -11,6 +11,7 @@ public class Area {
     private List<Organism> organismList;
     private final int id;
     private Random random;
+    private boolean isRunning = true;
 
     public Area(List<Organism> organismList) {
         System.out.println("AREA: Init with " + organismList);
@@ -48,6 +49,7 @@ public class Area {
         progressAnimals(Wolf.class);
         countTimerAllAnimals();
         List <Animal> moveList = moveAnimals();
+        updateRunningStatus();
         System.out.println("AREA: -> Progression organisms complete. Staying " + organismList + " Moving " + moveList);
         return moveList;
     }
@@ -152,7 +154,7 @@ public class Area {
                     //System.out.println("SUCCESS Mate " + animalTarget);
                     animalActor.resetMateTimer();
                     //System.out.println("Adding " + newAnimal);
-                    Animal newAnimal = animalActor.getNewInstance();
+                    Animal newAnimal = (Animal) animalActor.newInstance();
                     System.out.println("MATE: " + animalActor + " with " + animalTarget + " result " + newAnimal);
                     organismList.add(newAnimal);
                 } else {
@@ -163,8 +165,6 @@ public class Area {
     }
 
     private List<Animal> moveAnimals() {
-        //todo: run chance for move. If pass, add to seperate move list with getter and removed from org list. Called upon once all areas
-        //are done progressing. Make sure to clear move list a start of area progression.
         List<Animal> moveList = new ArrayList<>();
         //System.out.println("AREA: Moving animals... ");
         for(Organism organism : getOrganismsByInstance(Animal.class)) {
@@ -183,6 +183,10 @@ public class Area {
         }
         //System.out.println("Returning " + moveList);
         return moveList;
+    }
+
+    private void updateRunningStatus() {
+        isRunning = !getOrganismsByInstance(Animal.class).isEmpty();
     }
 
     private void countTimerAllAnimals() {

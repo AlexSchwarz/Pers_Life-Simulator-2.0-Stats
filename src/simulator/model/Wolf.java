@@ -1,5 +1,7 @@
 package simulator.model;
 
+import javax.crypto.spec.OAEPParameterSpec;
+
 public class Wolf extends Animal{
     public Wolf() {
         super(Config.WOLF_START_ENERGY, Config.WOLF_MAX_ENERGY, Config.WOLF_MAX_AGE, Config.WOLF_MATE_TIME_DELAY, Config.WOLF_FEED_TIME_DELAY, Config.WOLF_FEED_CHANCE, Config.WOLF_MATE_CHANCE, Config.WOLF_MOVE_CHANCE, Rabbit.class);
@@ -7,7 +9,7 @@ public class Wolf extends Animal{
     }
 
     @Override
-    public Animal getNewInstance() {
+    public Organism newInstance() {
         return new Wolf();
     }
 

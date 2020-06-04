@@ -70,6 +70,27 @@ public abstract class Organism {
         return status;
     }
 
+    public static Organism newInstanceFromType(Config.OrganismType type) {
+        Objects.requireNonNull(type);
+        Organism organism;
+        switch (type) {
+            case PLANT:
+                organism = new Plant();
+                break;
+            case RABBIT:
+                organism = new Rabbit();
+                break;
+            case WOLF:
+                organism = new Wolf();
+                break;
+            default:
+                throw new IllegalArgumentException();
+        }
+        return organism;
+    }
+
+    public abstract Organism newInstance();
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

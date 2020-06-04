@@ -1,4 +1,10 @@
 
-]	java:S107"AConstructor has 8 parameters, which is greater than 7 authorized.(ùï‘œ8ÔÄÛä¦.
 H
 java:S2160"+Override the "equals" method in this class.(âŒø¯8½Ë«á¦.
+L
+java:S3740"/Provide the parametrized type for this generic.(ÖîØÔ8˜«ş§.
+Q
+java:S3740"/Provide the parametrized type for this generic.(Á¤€³øÿÿÿÿ8˜«ş§.
+L
+java:S3740&"/Provide the parametrized type for this generic.(êÍúà8˜«ş§.
+b	java:S107"AConstructor has 9 parameters, which is greater than 7 authorized.(Á¤€³øÿÿÿÿ8˜«ş§.

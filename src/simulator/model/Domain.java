@@ -26,20 +26,27 @@ public class Domain {
     private Random random = new Random();
 
 
-    public Domain() {
+    public Domain(int numberOfAreas, int sizeOfAreas, int initNumberPlants, int initNumberRabbits, int initNumberWolfs) {
         System.out.println("Domain: Init");
         areaList = new ArrayList<>();
         initAreaList();
     }
 
-    private void initAreaList() {
-        for(int i = 0; i < Config.NUMBER_OF_AREAS; i++) {
-            if(i == 2 || i == 5) {
-                areaList.add(new Area(newOrgList()));
-            }else {
-                areaList.add(new Area(newEmptyList()));
-            }
+    private void initAreaList(int numberOfAreas, int sizeOfAreas, int initNumberPlants, int initNumberRabbits, int initNumberWolfs) {
+        List<Organism> organismList = new ArrayList<>();
+        organismList.addAll(initOrganismsByTypeAndNumber(Config.OrganismType.PLANT, initNumberPlants));
+        organismList.addAll(initOrganismsByTypeAndNumber(Config.OrganismType.RABBIT, initNumberRabbits));
+        organismList.addAll(initOrganismsByTypeAndNumber(Config.OrganismType.WOLF, initNumberWolfs));
+
+    }
+
+    private List<Organism> initOrganismsByTypeAndNumber(Config.OrganismType type, int numberOf) {
+        List<Organism> orgList = new ArrayList<>();
+        int counter = 1;
+        while(counter < numberOf) {
+            orgList.add(Organism.newInstanceFromType(type));
         }
+        return orgList;
     }
 
     private List<Organism> newOrgList() {

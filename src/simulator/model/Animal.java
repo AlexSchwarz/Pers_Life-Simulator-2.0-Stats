@@ -67,6 +67,4 @@ public abstract class Animal extends Organism{
         feedTimer = Math.max(feedTimer-1, 0);
         mateTimer = Math.max(mateTimer-1, 0);
     }
-
-    public abstract Animal getNewInstance();
 }

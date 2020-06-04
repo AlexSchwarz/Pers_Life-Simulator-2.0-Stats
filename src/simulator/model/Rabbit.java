@@ -7,7 +7,7 @@ public class Rabbit extends Animal{
     }
 
     @Override
-    public Animal getNewInstance() {
+    public Organism newInstance() {
         return new Rabbit();
     }
 
