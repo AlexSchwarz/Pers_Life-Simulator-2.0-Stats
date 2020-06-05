@@ -13,9 +13,7 @@ public class Area {
     private Random random;
     private boolean isRunning = true;
     private final int size;
-    private int numberOfPlants = 0;
-    private int numberOfRabbits = 0;
-    private int numberOfWolfs = 0;
+    private AreaData areaData;
 
     public Area(int size) {
         //System.out.println("> AREA: Init");
@@ -23,30 +21,23 @@ public class Area {
         random = new Random();
         organismList = new ArrayList<>();
         id = counter++;
-        updateOrganismCount();
+        setAreaData();
     }
 
     private List<Organism> getAllOrganisms() {
         return organismList;
     }
 
-    public int getNumberOfPlants() {
-        return numberOfPlants;
-    }
-
-    public int getNumberOfRabbits() {
-        return numberOfRabbits;
-    }
-
-    public int getNumberOfWolfs() {
-        return numberOfWolfs;
+    public AreaData getAreaData() {
+        Objects.requireNonNull(areaData);
+        return areaData;
     }
 
     private boolean isFull() {
         boolean isFull = false;
         if(organismList.size() == size) {
             isFull = true;
-            System.out.println("FULL");
+            //System.out.println("FULL");
             throw new IllegalStateException("Area is full");
         }
         return isFull;
@@ -61,11 +52,11 @@ public class Area {
 
     public List<Animal> progressArea() {
         //System.out.println("> AREA: " + toString() + " Progress organisms... " + organismList);
-        progressPlants();
         progressAnimals(Rabbit.class);
         progressAnimals(Wolf.class);
+        progressPlants();
         countTimerAllAnimals();
-        updateOrganismCount();
+        setAreaData();
         List <Animal> moveList = moveAnimals();
         //System.out.println("> AREA: -> Progression organisms complete. Staying " + organismList + " Moving " + moveList);
         return moveList;
@@ -169,19 +160,20 @@ public class Area {
         return getAllOrganisms().stream().filter(filterPredicate).collect(Collectors.toList());
     }
 
-    public String getOrgListString() {
+    private void setAreaData() {
+        int plantCount = getOrganismsByInstance(Plant.class).size();
+        int rabbitCount = getOrganismsByInstance(Rabbit.class).size();
+        int wolfCount = getOrganismsByInstance(Wolf.class).size();
+        areaData = new AreaData(plantCount, rabbitCount, wolfCount);
+    }
+
+    public String getAreaInfoString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(toString() + "\n");
+        sb.append(toString()).append("\n");
         for(Organism organism : organismList) {
             sb.append(organism.toLongString() + "\n");
         }
         return sb.toString();
-    }
-
-    private void updateOrganismCount() {
-        numberOfPlants = getOrganismsByInstance(Plant.class).size();
-        numberOfRabbits = getOrganismsByInstance(Rabbit.class).size();
-        numberOfWolfs = getOrganismsByInstance(Wolf.class).size();
     }
 
     @Override

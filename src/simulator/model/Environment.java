@@ -1,5 +1,7 @@
 package simulator.model;
 
+import java.util.List;
+
 public class Environment {
 
     private Domain domain;
@@ -13,8 +15,16 @@ public class Environment {
         return domain.stepDomain();
     }
 
-    public void progressEnvironment(int steps) {
-        domain.progressDomain(steps);
+    public List<DomainData> runEnvironment(int steps) {
+        try {
+            domain.runDomain(steps);
+        }catch( IllegalStateException e) {
+            System.out.println("Terminated");
+        }
+        for (DomainData data : domain.getDataList()) {
+            System.out.println(data);
+        }
+        return domain.getDataList();
     }
 
     public int getCurrentArea() {
@@ -22,11 +32,7 @@ public class Environment {
     }
 
     public String getAreaString(int areaNumber) {
-        return domain.getAreaOrgString(areaNumber);
-    }
-
-    public String getCurrentAreaString() {
-        return domain.getCurrentAreaOrgString();
+        return domain.getAreaInfoString(areaNumber);
     }
 
     public String getMoveList() {

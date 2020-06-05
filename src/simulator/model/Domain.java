@@ -1,24 +1,20 @@
 package simulator.model;
 
+import java.awt.image.AreaAveragingScaleFilter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class Domain {
 
-    /*
-    todo: Add method to add new plants after all areas done progressing
-    either with fixed amount each turn or with a fixed amount in each area
-    fixed amount each domain progression makes more sense
-     */
-
     private final List<Area> areaList;
     private Random random = new Random();
     private final int numberOfAreas;
     private List<Animal> moveOrgList = new ArrayList<>();
     private int currentArea = 1;
-    private String domainOrgCount = "";
+    private List<DomainData> dataList = new ArrayList<>();
     private int dayCounter = 1;
+    private DomainData currentData = new DomainData(dayCounter);
     private int totalPlants = 0;
     private int totalRabbits = 0;
     private int totalWolfs = 0;
@@ -33,16 +29,16 @@ public class Domain {
         //System.out.println("DOMAIN: Init Complete ----------------------------------------------");
     }
 
+    public List<DomainData> getDataList() {
+        return dataList;
+    }
+
     public int getCurrentArea() {
         return currentArea;
     }
 
-    public String getAreaOrgString(int areaNumber) {
-        return areaList.get(areaNumber -1).getOrgListString();
-    }
-
-    public String getCurrentAreaOrgString() {
-        return areaList.get(currentArea -1 ).getOrgListString();
+    public String getAreaInfoString(int areaNumber) {
+        return areaList.get(areaNumber -1).getAreaInfoString();
     }
 
     public String getMoveOrgList() {
@@ -101,9 +97,7 @@ public class Domain {
     public boolean stepDomain() {
         Area area = areaList.get(currentArea-1);
         moveOrgList.addAll(area.progressArea());
-        totalPlants += area.getNumberOfPlants();
-        totalRabbits += area.getNumberOfRabbits();
-        totalWolfs += area.getNumberOfWolfs();
+        updateDomainData(area.getAreaData());
         return switchToNextArea();
     }
 
@@ -111,16 +105,7 @@ public class Domain {
         boolean areasLeft = true;
         int nextArea = currentArea + 1;
         if(nextArea > numberOfAreas) {
-            currentArea = 1;
-            moveAnimals(moveOrgList);
-            moveOrgList.clear();
-            initOrganismsInAreas(numberOfAreas, Config.PLANT_REGROWTH,0,0);
-            if(dayCounter == Config.WOLF_INTRODUCTION_DAY) {
-                initOrganismsInAreas(numberOfAreas,0,0, Config.INTRODUCTION_WOLF );
-            }
-            setDomainOrgCount();
-            System.out.println(domainOrgCount);
-            dayCounter++;
+            finalizeAreaCycle();
             areasLeft = false;
             //System.out.println("DOMAIN: -> Progression complete------------------------------------------");
         } else {
@@ -129,7 +114,22 @@ public class Domain {
         return areasLeft;
     }
 
-    public void progressDomain(int progressions) {
+    private void finalizeAreaCycle() {
+        currentArea = 1;
+        dayCounter++;
+        moveAnimals(moveOrgList);
+        moveOrgList.clear();
+        initOrganismsInAreas(numberOfAreas, Config.PLANT_REGROWTH,0,0);
+        if(dayCounter == Config.WOLF_INTRODUCTION_DAY) {
+            initOrganismsInAreas(numberOfAreas,0,0, Config.INTRODUCTION_WOLF );
+        }
+        //System.out.println(currentData);
+        dataList.add(currentData);
+        currentData.checkTerminate();
+        currentData = new DomainData(dayCounter);
+    }
+
+    public void runDomain(int progressions) {
         int i = 1;
         while( i <= progressions) {
             boolean dayRunning = true;
@@ -161,15 +161,7 @@ public class Domain {
         }
     }
 
-    public void setDomainOrgCount() {
-        if(dayCounter > Config.WOLF_INTRODUCTION_DAY && totalWolfs == 0) {
-            throw new IllegalStateException("No wolfs left");
-        }
-        StringBuilder sb = new StringBuilder();
-        sb.append("Day;").append(dayCounter).append(";P;").append(totalPlants).append(";R;").append(totalRabbits).append(";W;").append(totalWolfs);
-        domainOrgCount = sb.toString();
-        totalPlants = 0;
-        totalRabbits = 0;
-        totalWolfs = 0;
+    public void updateDomainData(AreaData areaData) {
+        currentData.update(areaData.getPlantCount(), areaData.getRabbitCount(), areaData.getWolfCount());
     }
 }
