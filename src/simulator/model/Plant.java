@@ -9,11 +9,16 @@ public class Plant extends Organism{
 
     @Override
     public String toString() {
-        return "Plant{"+ getID() + ";E" + getEnergy() + ";A" + getAge() + "}";
+        return "Plant{"+ getID() + "}";
     }
 
     @Override
     public Organism newInstance() {
         return new Plant();
+    }
+
+    @Override
+    public String toLongString() {
+        return "Plant{"+ getID() + ";E" + getEnergy() + ";A" + getAge() + "}";
     }
 }

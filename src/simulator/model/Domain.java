@@ -1,6 +1,5 @@
 package simulator.model;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -8,15 +7,6 @@ import java.util.Random;
 public class Domain {
 
     /*
-    todo: Add area init with Config values
-    for example init all starting animals and map with random number between 0 and Area_Number.
-    Then init areas with list of animals corresponding to its Area ID.
-
-    todo: Add method to relocate animals
-    Area generates list of animals that want to move. Domain gets list and for each animal generates
-    a new number between 0 and Area_Number then puts the orgs in those areas
-    To be done AFTER all areas progress.
-
     todo: Add method to add new plants after all areas done progressing
     either with fixed amount each turn or with a fixed amount in each area
     fixed amount each domain progression makes more sense
@@ -24,80 +14,147 @@ public class Domain {
 
     private final List<Area> areaList;
     private Random random = new Random();
+    private final int numberOfAreas;
+    private List<Animal> moveOrgList = new ArrayList<>();
+    private int currentArea = 1;
+    private int dayCounter = 1;
+    private int totalPlants = 0;
+    private int totalRabbits = 0;
+    private int totalWolfs = 0;
 
 
     public Domain(int numberOfAreas, int sizeOfAreas, int initNumberPlants, int initNumberRabbits, int initNumberWolfs) {
-        System.out.println("Domain: Init");
+        //System.out.println("DOMAIN: Init -------------------------------------------------------");
         areaList = new ArrayList<>();
-        initAreaList();
+        this.numberOfAreas = numberOfAreas;
+        initAreaList(numberOfAreas, sizeOfAreas);
+        initOrganismsInAreas(numberOfAreas, initNumberPlants, initNumberRabbits, initNumberWolfs);
+        //System.out.println("DOMAIN: Init Complete ----------------------------------------------");
     }
 
-    private void initAreaList(int numberOfAreas, int sizeOfAreas, int initNumberPlants, int initNumberRabbits, int initNumberWolfs) {
+    public int getCurrentArea() {
+        return currentArea;
+    }
+
+    public String getAreaOrgString(int areaNumber) {
+        return areaList.get(areaNumber -1).getOrgListString();
+    }
+
+    public String getCurrentAreaOrgString() {
+        return areaList.get(currentArea -1 ).getOrgListString();
+    }
+
+    public String getMoveOrgList() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Move list:\n");
+        for(Animal animal : moveOrgList) {
+            sb.append(animal + "\n");
+        }
+        return sb.toString();
+    }
+
+    private void initAreaList(int numberOfAreas, int sizeOfAreas) {
+        int counter = 1;
+        while(counter <= numberOfAreas) {
+            Area area = new Area(sizeOfAreas);
+            //System.out.println("Adding new Area " + area.toString());
+            areaList.add(area);
+            counter++;
+        }
+    }
+
+    private void initOrganismsInAreas(int numberOfAreas, int initNumberPlants, int initNumberRabbits, int initNumberWolfs) {
         List<Organism> organismList = new ArrayList<>();
         organismList.addAll(initOrganismsByTypeAndNumber(Config.OrganismType.PLANT, initNumberPlants));
         organismList.addAll(initOrganismsByTypeAndNumber(Config.OrganismType.RABBIT, initNumberRabbits));
         organismList.addAll(initOrganismsByTypeAndNumber(Config.OrganismType.WOLF, initNumberWolfs));
-
+        for(Organism organism : organismList) {
+            int attempts = 0;
+            boolean searching = true;
+            while(searching && attempts <= Config.MAX_ATTEMPTS) {
+                try {
+                    int areaNumber = random.nextInt(numberOfAreas);
+                    areaList.get(areaNumber).addOrganism(organism);
+                    searching = false;
+                    //System.out.println("Placed " + organism + " in area " + (areaNumber+1));
+                }catch (Exception e ) {
+                    attempts++;
+                }
+            }
+            if(searching) {
+                throw new RuntimeException("Passed number of attempts");
+            }
+        }
     }
 
     private List<Organism> initOrganismsByTypeAndNumber(Config.OrganismType type, int numberOf) {
         List<Organism> orgList = new ArrayList<>();
         int counter = 1;
-        while(counter < numberOf) {
+        while(counter <= numberOf) {
             orgList.add(Organism.newInstanceFromType(type));
+            counter++;
         }
         return orgList;
     }
 
-    private List<Organism> newOrgList() {
-        List<Organism> list = new ArrayList<>();
-        list.add(new Plant());
-        list.add(new Plant());
-        list.add(new Plant());
-        list.add(new Plant());
-        list.add(new Rabbit());
-        list.add(new Rabbit());
-        list.add(new Rabbit());
-        list.add(new Rabbit());
-        list.add(new Wolf());
-        list.add(new Wolf());
-        list.add(new Wolf());
-        list.add(new Wolf());
-        return list;
+    public boolean stepDomain() {
+        Area area = areaList.get(currentArea-1);
+        moveOrgList.addAll(area.progressArea());
+        totalPlants += area.getNumberOfPlants();
+        totalRabbits += area.getNumberOfRabbits();
+        totalWolfs += area.getNumberOfWolfs();
+        return switchToNextArea();
     }
 
-    private List<Organism> newEmptyList() {
-        return new ArrayList<>();
+    private boolean switchToNextArea() {
+        boolean areasLeft = true;
+        int nextArea = currentArea + 1;
+        if(nextArea > numberOfAreas) {
+            currentArea = 1;
+            moveAnimals(moveOrgList);
+            moveOrgList.clear();
+            dayCounter++;
+            areasLeft = false;
+            initOrganismsInAreas(numberOfAreas, Config.PLANT_REGROWTH,0,0);
+            System.out.println(totalPlants + " " + totalRabbits + " " + totalWolfs);
+            totalPlants = 0;
+            totalRabbits = 0;
+            totalWolfs = 0;
+            System.out.println("DOMAIN: -> Progression complete------------------------------------------");
+        } else {
+            currentArea = nextArea;
+        }
+        return areasLeft;
     }
 
-    public void progressDomain() {
-        System.out.println("DOMAIN: Progress...");
-        int i = 0;
-        while(i < 50) {
-            List<Animal> moveList = new ArrayList<>();
-            for (Area area : areaList) {
-                moveList.addAll(area.progressArea());
+    public void progressDomain(int progressions) {
+        int i = 1;
+        while( i <= progressions) {
+            boolean dayRunning = true;
+            while(dayRunning) {
+                dayRunning = stepDomain();
             }
-            moveAnimals(moveList);
             i++;
         }
-        System.out.println("DOMAIN: -> Progression complete");
     }
 
     private void moveAnimals(List<Animal> moveList) {
-        System.out.println("DOMAIN: Moving animals...");
+        //System.out.println("DOMAIN: Moving animals...");
         for(Animal animal : moveList) {
-            System.out.println("Moving " + animal.toString());
+            int attempts = 0;
             boolean searching = true;
-            while(searching) {
+            while(searching && attempts <= Config.MAX_ATTEMPTS) {
                 try {
                     int areaIndex = random.nextInt(Config.NUMBER_OF_AREAS);
                     areaList.get(areaIndex).addOrganism(animal);
-                    System.out.println("Moved to area " + areaIndex);
+                    //System.out.println("Moved " + animal + " to area " + (areaIndex+1));
                     searching = false;
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    attempts++;
                 }
+            }
+            if(searching) {
+                throw new RuntimeException("Passed number of attempts");
             }
         }
     }

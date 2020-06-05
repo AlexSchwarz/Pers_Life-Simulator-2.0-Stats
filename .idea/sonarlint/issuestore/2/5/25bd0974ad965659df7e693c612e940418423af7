@@ -1,55 +1,27 @@
 
-M
-java:S3740Ä"/Provide the parametrized type for this generic.(¿Áüþ8â€«þ§.
-Y	java:S125–"<This block of commented-out lines of code should be removed.(±Ñ›Ê8â€«þ§.
-^	java:S125µ"<This block of commented-out lines of code should be removed.(‚Žþýÿÿÿÿ8â€«þ§.
-[	java:S106±"9Replace this use of System.out or System.err by a logger.(Ëþ€ ùÿÿÿÿ8â€«þ§.
-Z	java:S1065"9Replace this use of System.out or System.err by a logger.(éØ€›ùÿÿÿÿ8â€«þ§.
-^	java:S125¸"<This block of commented-out lines of code should be removed.(ÂÏþœøÿÿÿÿ8â€«þ§.
-U	java:S106K"9Replace this use of System.out or System.err by a logger.(ŒºÕï8â€«þ§.
-]	java:S125i"<This block of commented-out lines of code should be removed.(¶…îîûÿÿÿÿ8â€«þ§.
-^	java:S125¬"<This block of commented-out lines of code should be removed.(Ã–…Ùýÿÿÿÿ8â€«þ§.
-^	java:S125"<This block of commented-out lines of code should be removed.(Š¼ïùÿÿÿÿ8â€«þ§.
-h
-java:S1192>"KDefine a constant instead of duplicating this literal "**********" 4 times.(“¾Øü8â€«þ§.
-]	java:S125:"<This block of commented-out lines of code should be removed.(˜ðÎÓøÿÿÿÿ8â€«þ§.
-y
-java:S1905Á"VRemove this unnecessary cast to "org.sonar.java.resolve.Symbols$UnknownType@196de13d".(°ð„×þÿÿÿÿ8þð¯ÿ§.
-^	java:S125š"<This block of commented-out lines of code should be removed.(ÂÓŒ¾ÿÿÿÿÿ8â€«þ§.
-X	java:S125€"<This block of commented-out lines of code should be removed.(Ã÷±]8â€«þ§.
-j
-java:S1192A"HDefine a constant instead of duplicating this literal "DEATH: " 3 times.(À¡—ýùÿÿÿÿ8â€«þ§.
-^	java:S125’"<This block of commented-out lines of code should be removed.(ê“áŸúÿÿÿÿ8â€«þ§.
-Y	java:S125©"<This block of commented-out lines of code should be removed.(ë¦æË8â€«þ§.
+X	java:S125b"<This block of commented-out lines of code should be removed.(È›…8‘»Ž¨.
+Y	java:S125"<This block of commented-out lines of code should be removed.(¶Ÿ—Ï8¼þ»Ž¨.
+^	java:S125˜"<This block of commented-out lines of code should be removed.(öØ½»üÿÿÿÿ8¼þ»Ž¨.
+b	java:S1127"FDefine and throw a dedicated exception instead of using a generic one.(î³Û8â€«þ§.
+Y	java:S125”"<This block of commented-out lines of code should be removed.(—ã€8¼þ»Ž¨.
+]	java:S125T"<This block of commented-out lines of code should be removed.(ä’Ž§øÿÿÿÿ8õÄ¼Ž¨.
+b	java:S1125"FDefine and throw a dedicated exception instead of using a generic one.(ó†óÖ8â€«þ§.
+]	java:S125\"<This block of commented-out lines of code should be removed.(˜ÜÛ”ùÿÿÿÿ8‘»Ž¨.
+Y	java:S125„"<This block of commented-out lines of code should be removed.(´¸»Â8ÄÏ»Ž¨.
+X	java:S125?"<This block of commented-out lines of code should be removed.(È·ù¿8Çâ¼Ž¨.
+X	java:S125e"<This block of commented-out lines of code should be removed.(·µìû8¤ðºŽ¨.
+‚
+java:S1488E"`Immediately return this expression instead of assigning it to the temporary variable "moveList".(Û¨¯¥øÿÿÿÿ8Çâ¼Ž¨.
+^	java:S125‡"<This block of commented-out lines of code should be removed.(Áí‰—ýÿÿÿÿ8ÄÏ»Ž¨.
+X	java:S125N"<This block of commented-out lines of code should be removed.(ÿèŒ8õÄ¼Ž¨.
 L
-java:S3740G"/Provide the parametrized type for this generic.(‘Áõ8â€«þ§.
-t
-java:S1450"XRemove the "isRunning" field and declare it as a local variable in the relevant methods.(®Ò€o8œ¥äþ§.
-]	java:S125z"<This block of commented-out lines of code should be removed.(€Á¦èûÿÿÿÿ8â€«þ§.
-b	java:S112$"FDefine and throw a dedicated exception instead of using a generic one.(ó†óÖ8â€«þ§.
-U	java:S106."9Replace this use of System.out or System.err by a logger.(®«â¼8â€«þ§.
-U	java:S106s"9Replace this use of System.out or System.err by a logger.(Õªóã8â€«þ§.
-O
-java:S1144h"2Remove this unused private "progressWolfs" method.(Ñç§¡8â€«þ§.
-Z	java:S106\"9Replace this use of System.out or System.err by a logger.(›ÍÕóúÿÿÿÿ8â€«þ§.
-Z	java:S106m"9Replace this use of System.out or System.err by a logger.(¢þÏúÿÿÿÿ8â€«þ§.
-b	java:S112&"FDefine and throw a dedicated exception instead of using a generic one.(î³Û8â€«þ§.
-U	java:S106Q"9Replace this use of System.out or System.err by a logger.(ë’ÁÑ8â€«þ§.
-^	java:S125‰"<This block of commented-out lines of code should be removed.(Èû‚›ýÿÿÿÿ8â€«þ§.
-^	java:S125¯"<This block of commented-out lines of code should be removed.(•©âúøÿÿÿÿ8â€«þ§.
-U	java:S106>"9Replace this use of System.out or System.err by a logger.(“¾Øü8â€«þ§.
-^	java:S125‚"<This block of commented-out lines of code should be removed.(•©âúøÿÿÿÿ8â€«þ§.
-[	java:S106ž"9Replace this use of System.out or System.err by a logger.(ä¨§áúÿÿÿÿ8â€«þ§.
-^	java:S125˜"<This block of commented-out lines of code should be removed.(•©âúøÿÿÿÿ8â€«þ§.
+java:S3740X"/Provide the parametrized type for this generic.(‘Áõ8â€«þ§.
+M
+java:S3740¢"/Provide the parametrized type for this generic.(¿Áüþ8ÈúÞŒ¨.
 I
-java:S1068"-Remove this unused "isRunning" private field.(®Ò€o8ç¾Úþ§.
-V
-java:S1144W"4Remove this unused private "progressRabbits" method.(¹¸Ý±ûÿÿÿÿ8â€«þ§.
-]	java:S125X"<This block of commented-out lines of code should be removed.(ö„¬¶ùÿÿÿÿ8â€«þ§.
-U	java:S106b"9Replace this use of System.out or System.err by a logger.(‡åô8â€«þ§.
-]	java:S125~"<This block of commented-out lines of code should be removed.(ì”áüÿÿÿÿ8â€«þ§.
-U	java:S106"9Replace this use of System.out or System.err by a logger.(øÏÀ·8â€«þ§.
-^	java:S125œ"<This block of commented-out lines of code should be removed.(³ýàŠûÿÿÿÿ8â€«þ§.
-Z	java:S106A"9Replace this use of System.out or System.err by a logger.(À¡—ýùÿÿÿÿ8â€«þ§.
-[	java:S106„"9Replace this use of System.out or System.err by a logger.(ˆ·ÇÓùÿÿÿÿ8â€«þ§.
-^	java:S125¡"<This block of commented-out lines of code should be removed.(¦¢Ûøûÿÿÿÿ8â€«þ§.
+java:S1068"-Remove this unused "isRunning" private field.(®Ò€o8ÚþÝŒ¨.
+]	java:S125p"<This block of commented-out lines of code should be removed.(Û¬øÁüÿÿÿÿ8ÄÏ»Ž¨.
+]	java:S125F"<This block of commented-out lines of code should be removed.(ñ‡„óúÿÿÿÿ8Çâ¼Ž¨.
+]	java:S125Q"<This block of commented-out lines of code should be removed.(¬‘¾Ñûÿÿÿÿ8õÄ¼Ž¨.
+]	java:S125u"<This block of commented-out lines of code should be removed.(²—ƒûÿÿÿÿ8ÄÏ»Ž¨.
+]	java:S125"<This block of commented-out lines of code should be removed.(áŸïøÿÿÿÿ8â€½Ž¨.

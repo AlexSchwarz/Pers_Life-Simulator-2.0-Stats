@@ -21,3 +21,7 @@ M
 src/simulator/model/Area.java,2\5\25bd0974ad965659df7e693c612e940418423af7
 O
 src/simulator/model/Domain.java,0\a\0ada7239cd035b785c3ad6d6ba9af0cdc0bccf5c
+a
+1src/simulator/controller/SimulatorController.java,a\b\abe7d30082185965f5804630c86c3435fe44e28e
+J
+src/simulator/MainGUI.java,8\9\89e8489cce509049045fa06a68701bf7fa9be4af

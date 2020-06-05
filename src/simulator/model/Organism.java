@@ -10,7 +10,7 @@ public abstract class Organism {
     todo: add different chances passed through constructor. i.e feed chance -> probability = actor find pray chance - pray escape chance
      */
 
-    private static int counter = 0;
+    private static int counter = 1;
 
     private final int ID;
     private int age = 0;
@@ -90,6 +90,8 @@ public abstract class Organism {
     }
 
     public abstract Organism newInstance();
+
+    public abstract String toLongString();
 
     @Override
     public boolean equals(Object o) {

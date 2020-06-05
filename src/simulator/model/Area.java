@@ -6,29 +6,48 @@ import java.util.stream.Collectors;
 
 public class Area {
 
-    private static int counter = 0;
+    private static int counter = 1;
 
     private List<Organism> organismList;
     private final int id;
     private Random random;
     private boolean isRunning = true;
+    private final int size;
+    private int numberOfPlants = 0;
+    private int numberOfRabbits = 0;
+    private int numberOfWolfs = 0;
 
-    public Area(List<Organism> organismList) {
-        System.out.println("AREA: Init with " + organismList);
+    public Area(int size) {
+        //System.out.println("> AREA: Init");
+        this.size = size;
         random = new Random();
-        Objects.requireNonNull(organismList);
-        this.organismList = organismList;
+        organismList = new ArrayList<>();
         id = counter++;
+        updateOrganismCount();
     }
 
     private List<Organism> getAllOrganisms() {
         return organismList;
     }
 
+    public int getNumberOfPlants() {
+        return numberOfPlants;
+    }
+
+    public int getNumberOfRabbits() {
+        return numberOfRabbits;
+    }
+
+    public int getNumberOfWolfs() {
+        return numberOfWolfs;
+    }
+
     private boolean isFull() {
         boolean isFull = false;
-        if(organismList.size() == Config.MAX_ORGANISMS_IN_AREA) {
+        if(organismList.size() == size) {
             isFull = true;
+            System.out.println("FULL");
+            throw new RuntimeException("Area is full");
         }
         return isFull;
     }
@@ -39,32 +58,32 @@ public class Area {
         }else {
             organismList.add(organism);
         }
-        assert organismList.size() <= Config.MAX_ORGANISMS_IN_AREA;
+        assert organismList.size() <= size;
     }
 
     public List<Animal> progressArea() {
-        System.out.println("AREA: " + toString() + " Progress organisms... " + organismList);
+        //System.out.println("> AREA: " + toString() + " Progress organisms... " + organismList);
         progressPlants();
         progressAnimals(Rabbit.class);
         progressAnimals(Wolf.class);
         countTimerAllAnimals();
+        updateOrganismCount();
         List <Animal> moveList = moveAnimals();
-        updateRunningStatus();
-        System.out.println("AREA: -> Progression organisms complete. Staying " + organismList + " Moving " + moveList);
+        //System.out.println("> AREA: -> Progression organisms complete. Staying " + organismList + " Moving " + moveList);
         return moveList;
     }
 
     private void progressPlants() {
-        //System.out.println("AREA: Progress Plants...");
         Iterator<Organism> it = getOrganismsByInstance(Plant.class).iterator();
         while(it.hasNext()) {
             Plant plant = (Plant) it.next();
-            System.out.println("AREA: Progress Plant " + plant.toString() + "**********");
+            //System.out.println("> AREA: Progress Plant " + plant.toLongString());
             plant.increaseAge();
             if(plant.isDead()) {
-                System.out.println("DEATH: " + plant);
+                //System.out.println("---DEATH: " + plant);
                 organismList.remove(plant);
             }
+            //System.out.println("Complete " + plant.toLongString());
         }
     }
 
@@ -72,93 +91,50 @@ public class Area {
         Iterator<Organism> it = getOrganismsByInstance(animalClass).iterator();
         while(it.hasNext()) {
             Animal animal = (Animal) it.next();
-            System.out.println("AREA: Progress " + animal.toString()  + "**********");
+            //System.out.println("> AREA: Progress " + animal.toLongString());
             animalFeed(animal, getOrganismsByInstance(animal.getPray()));
             animalMate(animal, getOrganismsByInstance(animal.getClass()));
             animal.increaseAge();
             animal.decreaseEnergy(Config.DAILY_ENERGY_COST);
             if(animal.isDead()) {
-                System.out.println("Death: " + animal);
+                //System.out.println("---Death: " + animal);
                 organismList.remove(animal);
             }
-        }
-    }
-
-    private void progressRabbits() {
-        //System.out.println("AREA: Progress Rabbits...");
-        Iterator<Organism> it = getOrganismsByInstance(Rabbit.class).iterator();
-        while(it.hasNext()) {
-            Rabbit rabbit = (Rabbit) it.next();
-            System.out.println("AREA: Progress Rabbit " + rabbit.toString() + "**********");
-            animalFeed(rabbit, getOrganismsByInstance(Plant.class));
-            animalMate(rabbit, getOrganismsByInstance(Rabbit.class));
-            rabbit.increaseAge();
-            rabbit.decreaseEnergy(Config.DAILY_ENERGY_COST);
-            if(rabbit.isDead()) {
-                System.out.println("DEATH: " + rabbit);
-                organismList.remove(rabbit);
-            }
-        }
-    }
-
-    private void progressWolfs() {
-        //System.out.println("AREA: Progress Wolfs...");
-        Iterator<Organism> it = getOrganismsByInstance(Wolf.class).iterator();
-        while(it.hasNext()) {
-            Wolf wolf = (Wolf) it.next();
-            System.out.println("AREA: Progress Wolf " + wolf.toString() + "**********");
-            animalFeed(wolf, getOrganismsByInstance(Rabbit.class));
-            animalMate(wolf, getOrganismsByInstance(Wolf.class));
-            wolf.increaseAge();
-            wolf.decreaseEnergy(Config.DAILY_ENERGY_COST);
-            if(wolf.isDead()) {
-                System.out.println("DEATH: " + wolf);
-                organismList.remove(wolf);
-            }
+            //System.out.println("Complete " + animal.toLongString());
         }
     }
 
     private void animalFeed(Animal animal, List<Organism> organismsToFeedOn) {
-        //System.out.println("Attempting feed on " + organismsToFeedOn);
         Iterator<Organism> it = organismsToFeedOn.iterator();
         while(animal.canFeed() && it.hasNext()) {
             Organism organism = it.next();
-            //System.out.println("Checking " + organism.toString());
             if(!animal.equals(organism)) {
-                //System.out.println("Animal feed chance " + animal.getChanceToFeed());
                 double chance = random.nextDouble();
-                //System.out.println("Chance " + chance);
                 if (animal.getChanceToFeed() >= chance) {
-                    System.out.println("FEED:" + organism);
-                    animal.increaseEnergy(organism.getEnergy());
+                    //System.out.println("---FEED: Success on " + organism + ", " + animal.getChanceToFeed() + " vs " + chance);
+                    animal.increaseEnergy(Config.ENERGY_GAIN);
                     animal.resetFeedTimer();
                     organismList.remove(organism);
                 } else {
-                    //System.out.println("FAILURE feed " + organism);
+                    //System.out.println("---FEED: Failure on " + organism + ", " + animal.getChanceToFeed() + " vs " + chance);
                 }
             }
         }
     }
 
     private void animalMate(Animal animalActor, List<Organism> organismsToMateWith) {
-        //System.out.println("Attempting mate with " + organismsToMateWith);
         Iterator<Organism> it = organismsToMateWith.iterator();
-        //System.out.println("Animal Actor wants to mate " + animalActor.getWantsToMate());
         while(animalActor.canMate() && it.hasNext()) {
             Animal animalTarget = (Animal) it.next();
             if(!animalActor.equals(animalTarget) && animalTarget.canMate()) {
-                //System.out.println("Animal mate chance " + animalActor.getChanceToMate());
                 double chance = random.nextDouble();
-                //System.out.println("Chance " + chance);
                 if (animalActor.getChanceToMate() >= chance && !isFull()) {
-                    //System.out.println("SUCCESS Mate " + animalTarget);
                     animalActor.resetMateTimer();
-                    //System.out.println("Adding " + newAnimal);
                     Animal newAnimal = (Animal) animalActor.newInstance();
-                    System.out.println("MATE: " + animalActor + " with " + animalTarget + " result " + newAnimal);
+                    //System.out.println("---MATE: Success with " + animalTarget + ", " + animalActor.getChanceToMate() + " vs " + chance + ", result " + newAnimal.toString());
                     organismList.add(newAnimal);
                 } else {
-                    //System.out.println("FAILURE Mate " + animalTarget);
+                    //System.out.println("---MATE: Failure with " + animalTarget + ", " + animalActor.getChanceToMate() + " vs " + chance);
                 }
             }
         }
@@ -166,27 +142,19 @@ public class Area {
 
     private List<Animal> moveAnimals() {
         List<Animal> moveList = new ArrayList<>();
-        //System.out.println("AREA: Moving animals... ");
+        //System.out.println("> AREA: Moving animals... ");
         for(Organism organism : getOrganismsByInstance(Animal.class)) {
             Animal animal = (Animal) organism;
-            //System.out.println("Checking move for " + animal.toString());
-            //System.out.println("Animal move chance " + animal.getChanceToMove());
             double chance = random.nextDouble();
-            //System.out.println("Chance " + chance);
             if(animal.getChanceToMove() >= chance) {
-                System.out.println("MOVE: " + organism);
+                //System.out.println("---MOVE: Success " + animal + " " + animal.getChanceToMove() + " vs " + chance);
                 moveList.add(animal);
                 organismList.remove(animal);
             }else {
-                //System.out.println("FAILURE Move");
+                //System.out.println("---MOVE: Failure " + animal + " " + animal.getChanceToMove() + " vs " + chance);
             }
         }
-        //System.out.println("Returning " + moveList);
         return moveList;
-    }
-
-    private void updateRunningStatus() {
-        isRunning = !getOrganismsByInstance(Animal.class).isEmpty();
     }
 
     private void countTimerAllAnimals() {
@@ -201,10 +169,23 @@ public class Area {
         return getAllOrganisms().stream().filter(filterPredicate).collect(Collectors.toList());
     }
 
+    public String getOrgListString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(toString() + "\n");
+        for(Organism organism : organismList) {
+            sb.append(organism.toLongString() + "\n");
+        }
+        return sb.toString();
+    }
+
+    private void updateOrganismCount() {
+        numberOfPlants = getOrganismsByInstance(Plant.class).size();
+        numberOfRabbits = getOrganismsByInstance(Rabbit.class).size();
+        numberOfWolfs = getOrganismsByInstance(Wolf.class).size();
+    }
+
     @Override
     public String toString() {
-        return "Area{" +
-                id +
-                '}';
+        return "Area{" + id + '}';
     }
 }
