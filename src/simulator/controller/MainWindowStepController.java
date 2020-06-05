@@ -2,13 +2,14 @@ package simulator.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
+import simulator.model.Config;
 import simulator.model.Environment;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class SimulatorController {
+public class MainWindowStepController {
 
     @FXML private TextArea textArea1;
     @FXML private TextArea textArea2;
@@ -26,6 +27,15 @@ public class SimulatorController {
     @FXML private TextArea textArea14;
     @FXML private TextArea textArea15;
     @FXML private TextArea textArea16;
+    @FXML private TextArea textArea17;
+    @FXML private TextArea textArea18;
+    @FXML private TextArea textArea19;
+    @FXML private TextArea textArea20;
+    @FXML private TextArea textArea21;
+    @FXML private TextArea textArea22;
+    @FXML private TextArea textArea23;
+    @FXML private TextArea textArea24;
+    @FXML private TextArea textArea25;
     @FXML private TextArea textAreaMoveList;
 
     Environment environment;
@@ -50,6 +60,15 @@ public class SimulatorController {
         textAreaList.add(textArea14);
         textAreaList.add(textArea15);
         textAreaList.add(textArea16);
+        textAreaList.add(textArea17);
+        textAreaList.add(textArea18);
+        textAreaList.add(textArea19);
+        textAreaList.add(textArea20);
+        textAreaList.add(textArea21);
+        textAreaList.add(textArea22);
+        textAreaList.add(textArea23);
+        textAreaList.add(textArea24);
+        textAreaList.add(textArea25);
     }
 
     public void init() {
@@ -58,7 +77,7 @@ public class SimulatorController {
     }
 
     public void updateAllTextAreas() {
-        for(int i = 1; i <= 16 ; i ++) {
+        for(int i = 1; i <= Config.NUMBER_OF_AREAS ; i ++) {
             textAreaList.get(i-1).setText(environment.getAreaString(i));
         }
         textAreaMoveList.setText(environment.getMoveList());

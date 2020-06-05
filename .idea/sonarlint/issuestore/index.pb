@@ -21,7 +21,11 @@ M
 src/simulator/model/Area.java,2\5\25bd0974ad965659df7e693c612e940418423af7
 O
 src/simulator/model/Domain.java,0\a\0ada7239cd035b785c3ad6d6ba9af0cdc0bccf5c
-a
-1src/simulator/controller/SimulatorController.java,a\b\abe7d30082185965f5804630c86c3435fe44e28e
-J
-src/simulator/MainGUI.java,8\9\89e8489cce509049045fa06a68701bf7fa9be4af
+N
+src/simulator/MainGUIStep.java,7\e\7e463b42a41a6139bd609c7b20fed11459cee407
+f
+6src/simulator/controller/MainWindowStepController.java,5\5\55a3345704de0526a8305c63c59971b15385e748
+e
+5src/simulator/controller/MainWindowRunController.java,e\e\ee1c555ae7044be7bcd26e2af8659ccfd3a1b7de
+M
+src/simulator/MainGUIRun.java,d\1\d15f809a3aea8cadc563104eb61511758c98d557

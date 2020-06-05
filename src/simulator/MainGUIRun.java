@@ -6,7 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class MainGUI extends Application {
+public class MainGUIRun extends Application{
 
     private Stage primaryStage;
 
@@ -18,12 +18,10 @@ public class MainGUI extends Application {
 
     private void mainWindow () {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/fxml/MainWindow.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/fxml/MainWindowGUIRun.fxml"));
             Pane rootPane = loader.load();
             Scene scene = new Scene(rootPane);
 
-            primaryStage.setMinWidth(500);
-            primaryStage.setMinHeight(350);
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (Exception e) {
