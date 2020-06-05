@@ -2,9 +2,11 @@ package simulator.model;
 
 import javax.crypto.spec.OAEPParameterSpec;
 
+import static simulator.model.Config.*;
+
 public class Wolf extends Animal{
     public Wolf() {
-        super(Config.WOLF_START_ENERGY, Config.WOLF_MAX_ENERGY, Config.WOLF_MAX_AGE, Config.WOLF_AGE_TO_MATE, Config.WOLF_MATE_TIME_DELAY, Config.WOLF_FEED_TIME_DELAY, Config.WOLF_FEED_CHANCE, Config.WOLF_MATE_CHANCE, Config.WOLF_MOVE_CHANCE, Rabbit.class);
+        super(WOLF_START_ENERGY, WOLF_MAX_ENERGY, WOLF_ENERGY_TO_MATE, WOLF_ENERGY_MATE_COST, WOLF_MAX_AGE, WOLF_AGE_TO_MATE, WOLF_MATE_TIME_DELAY, WOLF_FEED_TIME_DELAY, WOLF_FEED_CHANCE, WOLF_MATE_CHANCE, WOLF_MOVE_CHANCE, Rabbit.class);
         //System.out.println("New Wolf");
     }
 

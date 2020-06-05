@@ -1,8 +1,10 @@
 package simulator.model;
 
+import static simulator.model.Config.*;
+
 public class Rabbit extends Animal{
     public Rabbit() {
-        super(Config.RABBIT_START_ENERGY, Config.RABBIT_MAX_ENERGY, Config.RABBIT_MAX_AGE, Config.RABBIT_AGE_TO_MATE, Config.RABBIT_MATE_TIME_DELAY, Config.RABBIT_FEED_TIME_DELAY, Config.RABBIT_FEED_CHANCE, Config.RABBIT_MATE_CHANCE, Config.RABBIT_MOVE_CHANCE, Plant.class);
+        super(RABBIT_START_ENERGY, RABBIT_MAX_ENERGY, RABBIT_ENERGY_TO_MATE, RABBIT_ENERGY_MATE_COST, RABBIT_MAX_AGE, RABBIT_AGE_TO_MATE, RABBIT_MATE_TIME_DELAY, RABBIT_FEED_TIME_DELAY, RABBIT_FEED_CHANCE, RABBIT_MATE_CHANCE, RABBIT_MOVE_CHANCE, Plant.class);
         //System.out.println("New Rabbit");
     }
 

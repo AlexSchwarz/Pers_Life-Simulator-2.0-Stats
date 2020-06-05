@@ -17,6 +17,7 @@ public class Domain {
     private final int numberOfAreas;
     private List<Animal> moveOrgList = new ArrayList<>();
     private int currentArea = 1;
+    private String domainOrgCount = "";
     private int dayCounter = 1;
     private int totalPlants = 0;
     private int totalRabbits = 0;
@@ -72,14 +73,14 @@ public class Domain {
             int attempts = 0;
             boolean searching = true;
             while(searching && attempts <= Config.MAX_ATTEMPTS) {
-                try {
+                //try {
                     int areaNumber = random.nextInt(numberOfAreas);
                     areaList.get(areaNumber).addOrganism(organism);
                     searching = false;
                     //System.out.println("Placed " + organism + " in area " + (areaNumber+1));
-                }catch (Exception e ) {
+                //}catch (Exception e ) {
                     attempts++;
-                }
+                //}
             }
             if(searching) {
                 throw new RuntimeException("Passed number of attempts");
@@ -113,14 +114,15 @@ public class Domain {
             currentArea = 1;
             moveAnimals(moveOrgList);
             moveOrgList.clear();
+            initOrganismsInAreas(numberOfAreas, Config.PLANT_REGROWTH,0,0);
+            if(dayCounter == Config.WOLF_INTRODUCTION_DAY) {
+                initOrganismsInAreas(numberOfAreas,0,0, Config.INTRODUCTION_WOLF );
+            }
+            setDomainOrgCount();
+            System.out.println(domainOrgCount);
             dayCounter++;
             areasLeft = false;
-            initOrganismsInAreas(numberOfAreas, Config.PLANT_REGROWTH,0,0);
-            System.out.println(totalPlants + " " + totalRabbits + " " + totalWolfs);
-            totalPlants = 0;
-            totalRabbits = 0;
-            totalWolfs = 0;
-            System.out.println("DOMAIN: -> Progression complete------------------------------------------");
+            //System.out.println("DOMAIN: -> Progression complete------------------------------------------");
         } else {
             currentArea = nextArea;
         }
@@ -144,18 +146,30 @@ public class Domain {
             int attempts = 0;
             boolean searching = true;
             while(searching && attempts <= Config.MAX_ATTEMPTS) {
-                try {
+                //try {
                     int areaIndex = random.nextInt(Config.NUMBER_OF_AREAS);
                     areaList.get(areaIndex).addOrganism(animal);
                     //System.out.println("Moved " + animal + " to area " + (areaIndex+1));
                     searching = false;
-                } catch (Exception e) {
+                //} catch (Exception e) {
                     attempts++;
-                }
+                //}
             }
             if(searching) {
                 throw new RuntimeException("Passed number of attempts");
             }
         }
+    }
+
+    public void setDomainOrgCount() {
+        if(dayCounter > Config.WOLF_INTRODUCTION_DAY && totalWolfs == 0) {
+            throw new IllegalStateException("No wolfs left");
+        }
+        StringBuilder sb = new StringBuilder();
+        sb.append("Day;").append(dayCounter).append(";P;").append(totalPlants).append(";R;").append(totalRabbits).append(";W;").append(totalWolfs);
+        domainOrgCount = sb.toString();
+        totalPlants = 0;
+        totalRabbits = 0;
+        totalWolfs = 0;
     }
 }

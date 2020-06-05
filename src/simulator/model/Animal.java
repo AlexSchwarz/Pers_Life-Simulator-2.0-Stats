@@ -8,11 +8,13 @@ public abstract class Animal extends Organism{
     private final Class pray;
     private final int mateTimeDelay;
     private final int feedTimeDelay;
+    private final int ageToMate;
+    private final int energyToMate;
+    private final int energyMateCost;
     private int mateTimer;
     private int feedTimer;
-    private final int ageToMate;
 
-    public Animal(int startEnergy, int maxEnergy, int maxAge, int ageToMate, int mateTimeDelay, int feedTimeDelay,  double chanceToFeed, double chanceToMate, double chanceToMove, Class pray) {
+    public Animal(int startEnergy, int maxEnergy, int energyToMate, int energyMateCost, int maxAge, int ageToMate, int mateTimeDelay, int feedTimeDelay,  double chanceToFeed, double chanceToMate, double chanceToMove, Class pray) {
         super(startEnergy, maxEnergy, maxAge);
         this.chanceToFeed = chanceToFeed;
         this.chanceToMate = chanceToMate;
@@ -21,6 +23,8 @@ public abstract class Animal extends Organism{
         this.mateTimeDelay = mateTimeDelay;
         this.feedTimeDelay = feedTimeDelay;
         this.ageToMate = ageToMate;
+        this.energyToMate = energyToMate;
+        this.energyMateCost = energyMateCost;
         resetMateTimer();
         resetFeedTimer();
     }
@@ -51,7 +55,7 @@ public abstract class Animal extends Organism{
 
     public boolean canMate() {
         boolean canMate = false;
-        if(mateTimer == 0 && getAge() >= ageToMate){
+        if(mateTimer == 0 && getAge() >= ageToMate && getEnergy() >= energyToMate){
             canMate = true;
         }
         return canMate;
@@ -63,6 +67,10 @@ public abstract class Animal extends Organism{
             canFeed = true;
         }
         return canFeed;
+    }
+
+    public void mate() {
+        decreaseEnergy(energyMateCost);
     }
 
     public void countDownTimer() {

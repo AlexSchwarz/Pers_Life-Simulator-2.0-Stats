@@ -1,14 +1,19 @@
 
-b	java:S112š"FDefine and throw a dedicated exception instead of using a generic one.(Ï×‹o8ÓÌ–‹¨.
-]	java:S125L"<This block of commented-out lines of code should be removed.(½åàõûÿÿÿÿ8˜ ¾Ž¨.
-a	java:S112R"FDefine and throw a dedicated exception instead of using a generic one.(Ï×‹o8ŒÝÙ†¨.
+Z	java:S106z"9Replace this use of System.out or System.err by a logger.(å€äÿÿÿÿÿ8Ùÿ·¨¨.
+]	java:S125="<This block of commented-out lines of code should be removed.(›üë†üÿÿÿÿ8¹´¾Ž¨.
+X	java:S125}"<This block of commented-out lines of code should be removed.(÷í¬8É¨Á¨¨.
+]	java:S125L"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8”òê§¨.
+Y	java:S125š"<This block of commented-out lines of code should be removed.(ñ±™Œ8¥Æè§¨.
+X	java:S125!"<This block of commented-out lines of code should be removed.(ÐÁß§8›Ô¾Ž¨.
+a	java:S112V"FDefine and throw a dedicated exception instead of using a generic one.(Ï×‹o8ÓÌ–‹¨.
+]	java:S125S"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8”òê§¨.
+^	java:S125"<This block of commented-out lines of code should be removed.(¶Ø¨åûÿÿÿÿ8 ¿½Ž¨.
+^	java:S125˜"<This block of commented-out lines of code should be removed.(É´‘¡ùÿÿÿÿ8 ¿½Ž¨.
+^	java:S125œ"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8¥Æè§¨.
 T
 java:S1135
 "2Complete the task associated to this TODO comment.(²Õ‚Öþÿÿÿÿ8Óñ¡Ó¦.
-]	java:S125;"<This block of commented-out lines of code should be removed.(›üë†üÿÿÿÿ8¹´¾Ž¨.
-^	java:S125‹"<This block of commented-out lines of code should be removed.(¶Ø¨åûÿÿÿÿ8 ¿½Ž¨.
-U	java:S106t"9Replace this use of System.out or System.err by a logger.(þÜ“×8¿¦Æ¨.
-U	java:S106x"9Replace this use of System.out or System.err by a logger.(æ°«þ8ýý½Ž¨.
-^	java:S125“"<This block of commented-out lines of code should be removed.(É´‘¡ùÿÿÿÿ8 ¿½Ž¨.
-]	java:S125"<This block of commented-out lines of code should be removed.(Å¨¯Éÿÿÿÿÿ8›Ô¾Ž¨.
-X	java:S125"<This block of commented-out lines of code should be removed.(ÐÁß§8›Ô¾Ž¨.
+^	java:S125•"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8¥Æè§¨.
+]	java:S125"<This block of commented-out lines of code should be removed.(Å¨¯Éÿÿÿÿÿ8›Ô¾Ž¨.
+]	java:S125P"<This block of commented-out lines of code should be removed.(½åàõûÿÿÿÿ8˜ ¾Ž¨.
+b	java:S112Ÿ"FDefine and throw a dedicated exception instead of using a generic one.(Ï×‹o8ŒÝÙ†¨.

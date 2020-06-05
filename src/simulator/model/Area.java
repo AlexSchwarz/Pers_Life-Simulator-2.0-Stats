@@ -47,15 +47,13 @@ public class Area {
         if(organismList.size() == size) {
             isFull = true;
             System.out.println("FULL");
-            throw new RuntimeException("Area is full");
+            throw new IllegalStateException("Area is full");
         }
         return isFull;
     }
 
-    public void addOrganism(Organism organism) throws Exception {
-        if(isFull()) {
-            throw new Exception("Full");
-        }else {
+    public void addOrganism(Organism organism) {
+        if(!isFull()) {
             organismList.add(organism);
         }
         assert organismList.size() <= size;
@@ -112,7 +110,7 @@ public class Area {
                 double chance = random.nextDouble();
                 if (animal.getChanceToFeed() >= chance) {
                     //System.out.println("---FEED: Success on " + organism + ", " + animal.getChanceToFeed() + " vs " + chance);
-                    animal.increaseEnergy(Config.ENERGY_GAIN);
+                    animal.increaseEnergy(organism.getEnergy());
                     animal.resetFeedTimer();
                     organismList.remove(organism);
                 } else {
@@ -130,6 +128,8 @@ public class Area {
                 double chance = random.nextDouble();
                 if (animalActor.getChanceToMate() >= chance && !isFull()) {
                     animalActor.resetMateTimer();
+                    animalActor.mate();
+                    animalTarget.mate();
                     Animal newAnimal = (Animal) animalActor.newInstance();
                     //System.out.println("---MATE: Success with " + animalTarget + ", " + animalActor.getChanceToMate() + " vs " + chance + ", result " + newAnimal.toString());
                     organismList.add(newAnimal);

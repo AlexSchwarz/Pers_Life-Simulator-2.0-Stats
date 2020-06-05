@@ -1,27 +1,28 @@
 
-X	java:S125b"<This block of commented-out lines of code should be removed.(È›…8‘»¨.
-Y	java:S125"<This block of commented-out lines of code should be removed.(¶Ÿ—Ï8¼ş»¨.
-^	java:S125˜"<This block of commented-out lines of code should be removed.(öØ½»üÿÿÿÿ8¼ş»¨.
-b	java:S1127"FDefine and throw a dedicated exception instead of using a generic one.(î³Û8â€«ş§.
-Y	java:S125”"<This block of commented-out lines of code should be removed.(—ã€8¼ş»¨.
-]	java:S125T"<This block of commented-out lines of code should be removed.(ä’§øÿÿÿÿ8õÄ¼¨.
-b	java:S1125"FDefine and throw a dedicated exception instead of using a generic one.(ó†óÖ8â€«ş§.
-]	java:S125\"<This block of commented-out lines of code should be removed.(˜ÜÛ”ùÿÿÿÿ8‘»¨.
-Y	java:S125„"<This block of commented-out lines of code should be removed.(´¸»Â8ÄÏ»¨.
-X	java:S125?"<This block of commented-out lines of code should be removed.(È·ù¿8Çâ¼¨.
-X	java:S125e"<This block of commented-out lines of code should be removed.(·µìû8¤ğº¨.
-‚
-java:S1488E"`Immediately return this expression instead of assigning it to the temporary variable "moveList".(Û¨¯¥øÿÿÿÿ8Çâ¼¨.
-^	java:S125‡"<This block of commented-out lines of code should be removed.(Áí‰—ıÿÿÿÿ8ÄÏ»¨.
-X	java:S125N"<This block of commented-out lines of code should be removed.(ÿèŒ8õÄ¼¨.
-L
-java:S3740X"/Provide the parametrized type for this generic.(‘Áõ8â€«ş§.
-M
-java:S3740¢"/Provide the parametrized type for this generic.(¿Áüş8ÈúŞŒ¨.
 I
 java:S1068"-Remove this unused "isRunning" private field.(®Ò€o8ÚşİŒ¨.
-]	java:S125p"<This block of commented-out lines of code should be removed.(Û¬øÁüÿÿÿÿ8ÄÏ»¨.
+Y	java:S125‘"<This block of commented-out lines of code should be removed.(¶Ÿ—Ï8Ñğ¦¨.
+^	java:S125‰"<This block of commented-out lines of code should be removed.(Áí‰—ıÿÿÿÿ8ú«ğ¦¨.
+]	java:S125\"<This block of commented-out lines of code should be removed.(˜ÜÛ”ùÿÿÿÿ8ù§ï¦¨.
+Y	java:S125†"<This block of commented-out lines of code should be removed.(´¸»Â8˜˜ğ¦¨.
+]	java:S125u"<This block of commented-out lines of code should be removed.(²—ƒûÿÿÿÿ8Åÿï¦¨.
+X	java:S125b"<This block of commented-out lines of code should be removed.(È›…8”¿ï¦¨.
+Z
+java:S2589"7Remove this expression which always evaluates to "true"(¯€Óşÿÿÿÿ8Ì•˜¤¨.
+‚
+java:S1488E"`Immediately return this expression instead of assigning it to the temporary variable "moveList".(Û¨¯¥øÿÿÿÿ8Çâ¼¨.
+X	java:S125e"<This block of commented-out lines of code should be removed.(·µìû8 Ğï¦¨.
+]	java:S125p"<This block of commented-out lines of code should be removed.(Û¬øÁüÿÿÿÿ8»êï¦¨.
 ]	java:S125F"<This block of commented-out lines of code should be removed.(ñ‡„óúÿÿÿÿ8Çâ¼¨.
-]	java:S125Q"<This block of commented-out lines of code should be removed.(¬‘¾Ñûÿÿÿÿ8õÄ¼¨.
-]	java:S125u"<This block of commented-out lines of code should be removed.(²—ƒûÿÿÿÿ8ÄÏ»¨.
+X	java:S125N"<This block of commented-out lines of code should be removed.(ÿèŒ8úÚÕ¦¨.
 ]	java:S125"<This block of commented-out lines of code should be removed.(áŸïøÿÿÿÿ8â€½¨.
+X	java:S125?"<This block of commented-out lines of code should be removed.(È·ù¿8í†ï¦¨.
+]	java:S125T"<This block of commented-out lines of code should be removed.(ä’§øÿÿÿÿ8…áÏ¦¨.
+Y	java:S125–"<This block of commented-out lines of code should be removed.(—ã€8§ãğ¦¨.
+^	java:S125š"<This block of commented-out lines of code should be removed.(öØ½»üÿÿÿÿ8Èöğ¦¨.
+\
+java:S18540":Remove this useless assignment to local variable "isFull".(¹çÍşùÿÿÿÿ8Ì•˜¤¨.
+Y
+java:S25898"7Remove this expression which always evaluates to "true"(ò‡™µÿÿÿÿÿ8é×¥¥¨.
+]	java:S125Q"<This block of commented-out lines of code should be removed.(¬‘¾Ñûÿÿÿÿ8¯ÌÏ¦¨.
+Z	java:S1061"9Replace this use of System.out or System.err by a logger.(¼êşúÿÿÿÿ8Ì•˜¤¨.
