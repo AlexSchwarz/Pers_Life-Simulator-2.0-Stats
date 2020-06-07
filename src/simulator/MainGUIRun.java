@@ -27,7 +27,7 @@ public class MainGUIRun extends Application{
     private void mainWindow () {
         try {
             final Environment environment = new Environment();
-            final NumberAxis xAxis = new NumberAxis();
+            final NumberAxis xAxis = new NumberAxis(0,1000,10);
             final NumberAxis yAxis = new NumberAxis(0,100,10);
             xAxis.setLabel("Day");
             yAxis.setLabel("Organism Count");

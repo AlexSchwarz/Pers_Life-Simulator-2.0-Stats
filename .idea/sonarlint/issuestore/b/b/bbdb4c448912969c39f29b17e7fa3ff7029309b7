@@ -1,4 +1,10 @@
 
-c	java:S107"BConstructor has 12 parameters, which is greater than 7 authorized.(®‹Üøÿÿÿÿ8È•˜¤¨.
+L
+java:S3740"/Provide the parametrized type for this generic.(ÖîØÔ8‹¸¹ş§.
 H
-java:S2160"+Override the "equals" method in this class.(âŒø¯8‚¼¥¨.
+java:S2160"+Override the "equals" method in this class.(âŒø¯8Ö°ô¡¨.
+Q
+java:S3740"/Provide the parametrized type for this generic.(®‹Üøÿÿÿÿ8ÿô¬¨.
+L
+java:S3740,"/Provide the parametrized type for this generic.(êÍúà8ÿô¬¨.
+c	java:S107"BConstructor has 12 parameters, which is greater than 7 authorized.(®‹Üøÿÿÿÿ8ÿô¬¨.

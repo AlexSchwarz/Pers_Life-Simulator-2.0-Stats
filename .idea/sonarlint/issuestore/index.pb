@@ -1,6 +1,4 @@
 
->
-files/data.csv,4\f\4fbf82a98df717ca336778d2cbaa36e24834870b
 G
 src/simulator/Main.java,2\6\26fb1c2add85db82c45a34f58b073614842aefe4
 T
@@ -25,7 +23,11 @@ N
 src/simulator/MainGUIStep.java,7\e\7e463b42a41a6139bd609c7b20fed11459cee407
 f
 6src/simulator/controller/MainWindowStepController.java,5\5\55a3345704de0526a8305c63c59971b15385e748
-e
-5src/simulator/controller/MainWindowRunController.java,e\e\ee1c555ae7044be7bcd26e2af8659ccfd3a1b7de
 M
 src/simulator/MainGUIRun.java,d\1\d15f809a3aea8cadc563104eb61511758c98d557
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+Q
+!src/simulator/model/AreaData.java,0\4\04e42b1f7f763baaecbb1e2719db00c57a14d21c
+S
+#src/simulator/model/DomainData.java,c\f\cfb0850472ac9a18429bfc2a189d83973f578477

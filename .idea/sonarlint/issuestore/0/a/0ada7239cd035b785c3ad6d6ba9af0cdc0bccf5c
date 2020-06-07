@@ -1,19 +1,24 @@
 
-Z	java:S106z"9Replace this use of System.out or System.err by a logger.(å€äÿÿÿÿÿ8Ùÿ·¨¨.
-]	java:S125S"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8”òê§¨.
-]	java:S125P"<This block of commented-out lines of code should be removed.(½åàõûÿÿÿÿ8˜ ¾¨.
-a	java:S112V"FDefine and throw a dedicated exception instead of using a generic one.(Ï×‹o8ÓÌ–‹¨.
-X	java:S125!"<This block of commented-out lines of code should be removed.(ĞÁß§8›Ô¾¨.
-T
-java:S1135
-"2Complete the task associated to this TODO comment.(²Õ‚Öşÿÿÿÿ8Óñ¡Ó¦.
-^	java:S125œ"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8¥Æè§¨.
-]	java:S125L"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8”òê§¨.
-b	java:S112Ÿ"FDefine and throw a dedicated exception instead of using a generic one.(Ï×‹o8ŒİÙ†¨.
-]	java:S125"<This block of commented-out lines of code should be removed.(Å¨¯Éÿÿÿÿÿ8›Ô¾¨.
-^	java:S125•"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8¥Æè§¨.
-]	java:S125="<This block of commented-out lines of code should be removed.(›üë†üÿÿÿÿ8¹´¾¨.
-^	java:S125"<This block of commented-out lines of code should be removed.(¶Ø¨åûÿÿÿÿ8 ¿½¨.
-^	java:S125˜"<This block of commented-out lines of code should be removed.(É´‘¡ùÿÿÿÿ8 ¿½¨.
-X	java:S125}"<This block of commented-out lines of code should be removed.(÷í¬8É¨Á¨¨.
-Y	java:S125š"<This block of commented-out lines of code should be removed.(ñ±™Œ8¥Æè§¨.
+]	java:S125L"<This block of commented-out lines of code should be removed.(½åàõûÿÿÿÿ8àşô¬¨.
+^	java:S125œ"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8àşô¬¨.
+]	java:S125"<This block of commented-out lines of code should be removed.(Å¨¯Éÿÿÿÿÿ8àşô¬¨.
+f
+java:S1128"DRemove this unused import 'java.awt.image.AreaAveragingScaleFilter'.(şœÄÅùÿÿÿÿ8ÄÑ¯¨.
+L
+java:S1068"/Remove this unused "totalPlants" private field.(Ö‡â¼8™³‡¯¨.
+b	java:S112Ÿ"FDefine and throw a dedicated exception instead of using a generic one.(Ï×‹o8àşô¬¨.
+a	java:S112R"FDefine and throw a dedicated exception instead of using a generic one.(Ï×‹o8àşô¬¨.
+]	java:S125~"<This block of commented-out lines of code should be removed.(Şè“üÿÿÿÿ8é¯è¯¨.
+]	java:S1259"<This block of commented-out lines of code should be removed.(›üë†üÿÿÿÿ8àşô¬¨.
+^	java:S125˜"<This block of commented-out lines of code should be removed.(É´‘¡ùÿÿÿÿ8àşô¬¨.
+]	java:S125H"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8àşô¬¨.
+P
+java:S1068".Remove this unused "totalWolfs" private field.(ŒéöŸùÿÿÿÿ8™³‡¯¨.
+X	java:S125"<This block of commented-out lines of code should be removed.(ĞÁß§8àşô¬¨.
+X	java:S125n"<This block of commented-out lines of code should be removed.(÷í¬8àşô¬¨.
+^	java:S125"<This block of commented-out lines of code should be removed.(¶Ø¨åûÿÿÿÿ8àşô¬¨.
+^	java:S125•"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8àşô¬¨.
+M
+java:S1068"0Remove this unused "totalRabbits" private field.(ß¤Ğ­8™³‡¯¨.
+]	java:S125O"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8àşô¬¨.
+Y	java:S125š"<This block of commented-out lines of code should be removed.(ñ±™Œ8àşô¬¨.
