@@ -43,7 +43,7 @@ public final class Config {
     public static final int WOLF_START_ENERGY =     20;
     public static final int WOLF_MAX_ENERGY =       80;
     public static final int WOLF_ENERGY_TO_MATE =   50;
-    public static final int WOLF_ENERGY_MATE_COST = 40;
+    public static final int WOLF_ENERGY_MATE_COST = 30;
     public static final int WOLF_MAX_AGE =          160;
     public static final int WOLF_AGE_TO_MATE =      20;
     public static final int WOLF_FEED_TIME_DELAY =  1;
